@@ -1,6 +1,6 @@
 ---
 name: snapcast-server
-version: 0.28.0.1
+version: 0.31.0.0
 slug: snapcastserver
 description: Create a snapcast server
 url: https://github.com/FrankZZ/hassio-addons-snapcast
