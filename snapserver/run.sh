@@ -2,7 +2,7 @@
 
 mkdir -p /share/snapfifo
 mkdir -p /share/snapcast
-
+cat /data/options.json
 declare streams
 declare stream_bis
 declare stream_ter
