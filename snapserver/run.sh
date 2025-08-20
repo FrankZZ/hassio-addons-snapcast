@@ -16,13 +16,13 @@ declare logging
 declare threads
 declare datadir
 
-config=/etc/snapserver.conf
+config=/etc/snapserver1.conf
 
-if ! bashio::fs.file_exists '/etc/snapserver.conf'; then
-    touch /etc/snapserver.conf ||
-        bashio::exit.nok "Could not create snapserver.conf file on filesystem"
+if ! bashio::fs.file_exists '/etc/snapserver1.conf'; then
+    touch /etc/snapserver1.conf ||
+        bashio::exit.nok "Could not create snapserver1.conf file on filesystem"
 fi
-bashio::log.info "Populating snapserver.conf..."
+bashio::log.info "Populating snapserver1.conf..."
 
 echo "[stream]" > "${config}"
 # Streams
@@ -78,4 +78,4 @@ echo "datadir = ${datadir}" >> "${config}"
 
 bashio::log.info "Starting SnapServer..."
 
-/usr/bin/snapserver -c /etc/snapserver.conf
+/usr/bin/snapserver -c /etc/snapserver1.conf
