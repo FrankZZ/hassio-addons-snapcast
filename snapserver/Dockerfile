@@ -18,7 +18,7 @@ RUN \
     && cd librespot \
     && git init \
     && git remote add origin https://github.com/librespot-org/librespot.git \
-    && git fetch --depth=1 origin 78ce118d32912adfb2705481f69c83df6a88211f \
+    && git fetch --depth=1 origin ${LIBRESPOT_COMMIT} \
     && git checkout FETCH_HEAD \
     && cargo build -j4 --release \
     --no-default-features \
@@ -44,7 +44,7 @@ RUN \
     && apt-get clean \
     && rm snapserver_${SNAPCAST_VERSION}-1_amd64_bookworm.deb
 
-# COPY --from=builder /librespot /librespot
+COPY --from=builder /librespot /librespot
 COPY run.sh /
 RUN chmod a+x /run.sh
 
