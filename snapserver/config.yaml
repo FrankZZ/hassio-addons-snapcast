@@ -1,6 +1,6 @@
 ---
 name: snapcast-server
-version: 0.34.0
+version: 0.34.0.1
 slug: snapcastserver
 description: Create a snapcast server
 url: https://github.com/FrankZZ/hassio-addons-snapcast
@@ -15,7 +15,7 @@ audio: true
 # hassio_api: true
 init: false
 options:
-  streams: "source = spotify:///librespot?name=Spotify&bitrate=320"
+  streams: "source = spotify://librespot?name=Spotify&bitrate=320"
   buffer: 1000
   codec: "flac"
   send_to_muted: "false"
