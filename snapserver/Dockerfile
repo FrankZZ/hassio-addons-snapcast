@@ -3,7 +3,8 @@ ARG BUILD_FROM=ghcr.io/home-assistant/amd64-base:3.22
 FROM rust:1.88-alpine3.22 AS builder
 # Add env
 ENV LANG=C.UTF-8
-ENV LIBRESPOT_COMMIT=987dfa5df2546a96d34582674a757a3dcc6036a7
+# ENV LIBRESPOT_COMMIT=987dfa5df2546a96d34582674a757a3dcc6036a7
+ENV LIBRESPOT_COMMIT=dd9c3a174e46078c0ecb83caa9c6bb48aea66cac
 ENV PATH="/root/.cargo/bin:${PATH}"
 # --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
 RUN \
@@ -18,7 +19,7 @@ RUN \
     && mkdir librespot \
     && cd librespot \
     && git init \
-    && git remote add origin https://github.com/librespot-org/librespot.git \
+    && git remote add origin https://github.com/photovoltex/librespot.git \
     && git fetch --depth=1 origin ${LIBRESPOT_COMMIT} \
     && git checkout FETCH_HEAD \
     && cargo build -j4 --release \
