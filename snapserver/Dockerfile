@@ -38,8 +38,10 @@ FROM $BUILD_FROM
 ENV SNAPCAST_VERSION=0.34.0-r0
 ENV LIBRESPOT_VERSION=0.7.1-r0
 ENV PATH="/root/.cargo/bin:${PATH}"
-RUN apk add --no-cache snapcast-server=${SNAPCAST_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community
-RUN apk add --no-cache librespot=${LIBRESPOT_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+RUN apk add --no-cache alsa-utils alsaconf \
+    && apk add --no-cache snapcast-server=${SNAPCAST_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/community \
+    && apk add --no-cache librespot=${LIBRESPOT_VERSION} --repository=https://dl-cdn.alpinelinux.org/alpine/edge/testing
+
 # RUN \
 #     cd /tmp \
 #     && apt-get update \
