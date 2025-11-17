@@ -4,7 +4,7 @@ FROM rust:1.88-alpine3.22 AS builder
 # Add env
 ENV LANG=C.UTF-8
 # ENV LIBRESPOT_COMMIT=987dfa5df2546a96d34582674a757a3dcc6036a7
-ENV LIBRESPOT_COMMIT=dd9c3a174e46078c0ecb83caa9c6bb48aea66cac
+ENV LIBRESPOT_COMMIT=d36f9f1907e8cc9d68a93f8ebc6b627b1bf7267d
 ENV PATH="/root/.cargo/bin:${PATH}"
 # --repository=http://dl-cdn.alpinelinux.org/alpine/edge/main \
 RUN \
